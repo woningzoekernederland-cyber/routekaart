@@ -1,0 +1,208 @@
+.card {
+  background: var(--surf);
+  border: 1px solid var(--brd);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+.card:hover { border-color: var(--brd2); box-shadow: var(--sh); }
+.card.exp   { border-color: rgba(62,207,198,.18); }
+
+/* Header */
+.hdr {
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  user-select: none;
+}
+.num {
+  background: var(--bg3);
+  border-right: 1px solid var(--brd);
+  padding: 15px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  flex-shrink: 0;
+}
+.numS {
+  font-size: .55rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--t3);
+  font-weight: 700;
+}
+.numB {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--mint);
+  line-height: 1;
+}
+.hdrMain {
+  padding: 13px 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--t1);
+}
+.badge {
+  font-size: .64rem;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  background: var(--mglow);
+  color: var(--mint);
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 700;
+  border: 1px solid rgba(62,207,198,.18);
+  white-space: nowrap;
+}
+.meta { display: flex; gap: 13px; flex-wrap: wrap; }
+.mi   { display: flex; align-items: center; gap: 4px; font-size: .75rem; color: var(--t3); font-weight: 500; }
+.arrow {
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  color: var(--t3);
+  font-size: .8rem;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.card.exp .arrow { transform: rotate(180deg); color: var(--mint); }
+
+/* Body */
+.body {
+  padding: 16px 16px 18px;
+  border-top: 1px solid var(--brd);
+}
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 11px;
+}
+.subLabel {
+  font-size: .63rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t3);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.stopList { list-style: none; }
+.stopList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: .82rem;
+  color: var(--t2);
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+.stopList li::before {
+  content: "→";
+  color: var(--mintd);
+  flex-shrink: 0;
+  font-size: .74rem;
+  margin-top: 2px;
+}
+.htags { display: flex; flex-wrap: wrap; gap: 5px; }
+.htag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(245,183,49,.07);
+  border: 1px solid rgba(245,183,49,.18);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: .73rem;
+  font-weight: 600;
+  color: #f7c44a;
+}
+.overnight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--brd);
+  border-radius: var(--rs);
+  padding: 8px 12px;
+  margin-top: 11px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--t2);
+}
+
+/* Day schedule */
+.sched {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 7px;
+  margin-top: 11px;
+}
+.schedBlock {
+  background: var(--bg3);
+  border: 1px solid var(--brd);
+  border-radius: var(--rs);
+  padding: 8px 11px;
+}
+.schedTime {
+  font-size: .62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mint);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.schedText { font-size: .76rem; color: var(--t2); line-height: 1.4; }
+
+/* Weather alt */
+.weatherAlt {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(160,155,254,.06);
+  border: 1px solid rgba(160,155,254,.13);
+  border-radius: var(--rs);
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: .78rem;
+  color: #c0bdff;
+  line-height: 1.45;
+}
+
+/* Rationale */
+.rationale {
+  margin-top: 10px;
+  padding: 10px 13px;
+  background: var(--bg3);
+  border-left: 2px solid var(--mintd);
+  border-radius: 0 var(--rs) var(--rs) 0;
+  font-size: .78rem;
+  color: var(--t3);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .bodyGrid { grid-template-columns: 1fr; }
+  .sched    { grid-template-columns: 1fr; }
+  .num      { min-width: 54px; padding: 11px 9px; }
+  .numB     { font-size: 1.4rem; }
+}

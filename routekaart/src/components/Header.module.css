@@ -1,0 +1,42 @@
+.hdr {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--brd);
+  padding: 0 32px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  letter-spacing: -0.2px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--mint);
+  border-radius: 50%;
+  box-shadow: 0 0 9px var(--mint);
+}
+.logoText   { color: var(--t1); }
+.logoAccent { color: var(--mint); }
+.tag {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t3);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .hdr  { padding: 0 14px; }
+  .tag  { display: none; }
+}

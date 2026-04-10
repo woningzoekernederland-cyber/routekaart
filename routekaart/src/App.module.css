@@ -1,0 +1,87 @@
+.main { max-width: 1040px; margin: 0 auto; padding-bottom: 80px; }
+
+/* Error box */
+.errBox {
+  max-width: 1040px;
+  margin: 0 18px 18px;
+  background: rgba(255,107,107,.08);
+  border: 1.5px solid rgba(255,107,107,.22);
+  border-radius: var(--rs);
+  padding: 16px 20px;
+}
+.errType {
+  font-size: .68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.errMsg     { color: #ffb3b3; font-size: .87rem; margin-bottom: 5px; line-height: 1.5; }
+.errHint    { font-size: .78rem; color: var(--t3); margin-bottom: 10px; }
+.errActions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btnSm {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  background: var(--surf);
+  border: 1px solid var(--brd2);
+  border-radius: 100px;
+  font-family: "DM Sans", sans-serif;
+  font-size: .76rem;
+  color: var(--t2);
+  cursor: pointer;
+  transition: all .14s;
+  font-weight: 600;
+}
+.btnSm:hover { border-color: var(--mint); color: var(--mint); }
+
+/* Loading */
+.loadWrap {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1040px;
+  margin: 0 18px;
+}
+.ring {
+  width: 48px;
+  height: 48px;
+  border: 2.5px solid var(--surf2);
+  border-top: 2.5px solid var(--mint);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.ldTitle {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
+  margin-bottom: 7px;
+  color: var(--t1);
+}
+.ldSub  { font-size: .82rem; color: var(--t3); line-height: 2.1; }
+.ldStep {
+  opacity: 0;
+  animation: fstep .5s ease forwards;
+}
+.ldStep:nth-child(1) { animation-delay: .3s; }
+.ldStep:nth-child(2) { animation-delay: 1.3s; }
+.ldStep:nth-child(3) { animation-delay: 2.5s; }
+@keyframes fstep { to { opacity: 1; } }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--brd);
+  padding: 20px 32px;
+  text-align: center;
+  font-size: .72rem;
+  color: var(--t3);
+}
+.footerNote { color: var(--t3); }
+
+@media (max-width: 720px) {
+  .errBox   { margin: 0 12px 14px; }
+  .loadWrap { margin: 0 12px; }
+  .footer   { padding: 18px 16px; }
+}
