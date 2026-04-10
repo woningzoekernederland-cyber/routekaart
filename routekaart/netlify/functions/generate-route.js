@@ -10,7 +10,7 @@
  */
 
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
-const MODEL         = "claude-opus-4-6";   // beste model voor geografische kennis
+const MODEL         = "claude-sonnet-4-5";   // beste model voor geografische kennis
 const MAX_TOKENS    = 4096;
 const TIMEOUT_MS    = 55000; // Netlify functions time out at 60 s; leave margin
 
